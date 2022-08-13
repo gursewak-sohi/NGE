@@ -1,0 +1,685 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="shortcut icon" href="images/svg/favicon.svg" />
+    <!-- Booststrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- About Page Style -->
+<style>
+    /* TimeLine Section */
+    
+    .timeline-section {
+        padding: 5.938rem 0 7.188rem;
+    }
+    
+    .timeline-block {
+        max-width: 50.875rem;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .timeline-unit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .timeline-unit:not(:last-child) {
+        margin-bottom: 8.125rem;
+    }
+    
+    .timeline-text {
+        max-width: 30.063rem;
+        transition: 0.3s all ease;
+        opacity: 0.5;
+    }
+    
+    .timeline-icon img {
+        transition: 0.3s all ease;
+        opacity: 0.5;
+    }
+    
+    .timeline-icon {
+        transition: 0.3s all ease;
+        transform: scale(0.9);
+    }
+    
+    .timeline-unit.in-view .timeline-text {
+        opacity: 1;
+    }
+    
+    .timeline-unit.in-view .timeline-icon {
+        transform: scale(1);
+    }
+    
+    .timeline-unit.in-view .timeline-icon img {
+        opacity: 1;
+    }
+    
+    .timeline-text h3 {
+        color: var(--teal);
+        font-size: max(0.125rem, 20px);
+        line-height: max(2rem, 28px);
+        margin-bottom: 10px;
+    }
+    
+    .timeline-icon {
+        width: max(7.5rem, 92px);
+        position: relative;
+        background-color: var(--white);
+    }
+    
+    .default-line,
+    .draw-line {
+        height: 90%;
+        position: absolute;
+        right: max(3.75rem, 46px);
+        top: 10px;
+        width: 1px;
+        background-color: var(--gray);
+    }
+    
+    .draw-line {
+        height: 0;
+        background-color: var(--teal);
+    }
+    
+    @media (max-width: 1199px) {
+        .timeline-text {
+            max-width: 38rem;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .timeline-block {
+            max-width: 90%;
+        }
+        .timeline-text {
+            max-width: 58rem;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .timeline-section {
+            padding: 0px 0 50px;
+        }
+        .timeline-unit:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        .timeline-unit {
+            flex-direction: column-reverse;
+        }
+        .timeline-text {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .default-line,
+        .draw-line {
+            display: none;
+        }
+        .timeline-block {
+            max-width: 100%;
+        }
+        .timeline-text {
+            opacity: 1;
+        }
+        .timeline-icon img {
+            opacity: 1;
+        }
+        .timeline-icon {
+            transform: scale(1);
+        }
+    }
+    /* Team Section */
+    
+    .team-section {
+        padding: 0 0 5.75rem;
+    }
+    
+    .team-wrapper {
+        border-top: 1px solid var(--gray);
+        padding-top: 6.25rem;
+    }
+    
+    .team-block {
+        display: flex;
+        flex-direction: column;
+        max-width: 85.063rem;
+        margin: 0 auto;
+    }
+    
+    .team-block>h2 {
+        font-size: max(1.75rem, 22px);
+        line-height: 2rem;
+        margin-bottom: 1.875rem;
+    }
+    
+    .team-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 1.875rem;
+    }
+    
+    .team-unit {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3.125rem;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .team-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(0, 35, 79, 1) 35%, rgba(0, 176, 194, 1) 100%);
+        opacity: 0.8;
+        top: 0%;
+        left: -100%;
+        display: grid;
+        place-items: center;
+        padding-bottom: 4.625rem;
+    }
+    
+    .team-links {
+        display: flex;
+        align-items: baseline;
+        column-gap: 1.438rem;
+    }
+    
+    .team-links a {
+        display: block;
+    }
+    
+    .team-text {
+        padding-top: 1.25rem;
+        background-color: #fff;
+        position: relative;
+        z-index: 20;
+    }
+    
+    .team-text h3 {
+        font-size: max(0.125rem, 18px);
+        line-height: 25px;
+        font-weight: normal;
+        margin-bottom: 0.625rem;
+    }
+    
+    .team-text p {
+        font-size: max(1.063rem, 14px);
+        line-height: 1.188rem;
+    }
+    
+    @media (max-width: 991px) {
+        .team-list {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .team-section {
+            padding: 0 0 30px;
+        }
+        .team-wrapper {
+            padding-top: 50px;
+        }
+        .team-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Header Sectioin -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="home.html">
+                    <img src="images/logo.svg" width="199" height="70" alt="icon" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerToggler" aria-controls="headerToggler" aria-expanded="false" aria-label="Toggle navigation">
+                  <svg fill="#1E3962" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+                </button>
+                <div class="collapse navbar-collapse" id="headerToggler">
+                    <ul class="navbar-nav ms-auto mb-4 mb-md-5 mt-3 mt-md-4 mt-lg-0 mb-lg-0">
+                        <li class="active">
+                            <a href="about.html">About us</a>
+                        </li>
+                        <li>
+                            <a href="#">What we do 
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14.376">
+                                <path data-name="Path 9" d="M15.045 5.962a1.09 1.09 0 0 0-.2-.014L3.56 6.016l.247-.121a2.333 2.333 0 0 0 .65-.484l3.185-3.336a1.289 1.289 0 0 0 .176-1.59 1.106 1.106 0 0 0-1.6-.249A1.181 1.181 0 0 0 6.1.34L.341 6.371a1.24 1.24 0 0 0-.011 1.7l5.688 5.962a1.108 1.108 0 0 0 1.619-.012 1.209 1.209 0 0 0 .1-.118 1.281 1.281 0 0 0-.156-1.588L4.44 9.009a2.258 2.258 0 0 0-.57-.434l-.342-.16 11.242-.068a1.216 1.216 0 0 0 1.214-1.015 1.178 1.178 0 0 0-.939-1.37Z" fill="#fff"/>
+                              </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">Our Approach</a>
+                        </li>
+                        <li class="mega-menu">
+                            <a href="#">News Room 
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14.376">
+                                <path data-name="Path 9" d="M15.045 5.962a1.09 1.09 0 0 0-.2-.014L3.56 6.016l.247-.121a2.333 2.333 0 0 0 .65-.484l3.185-3.336a1.289 1.289 0 0 0 .176-1.59 1.106 1.106 0 0 0-1.6-.249A1.181 1.181 0 0 0 6.1.34L.341 6.371a1.24 1.24 0 0 0-.011 1.7l5.688 5.962a1.108 1.108 0 0 0 1.619-.012 1.209 1.209 0 0 0 .1-.118 1.281 1.281 0 0 0-.156-1.588L4.44 9.009a2.258 2.258 0 0 0-.57-.434l-.342-.16 11.242-.068a1.216 1.216 0 0 0 1.214-1.015 1.178 1.178 0 0 0-.939-1.37Z" fill="#fff"/>
+                              </svg>
+                            </a>
+                            <div class="mega-menu-block hide">
+                                <div class="container">
+                                    <div class="mega-menu-content">
+                                        <div class="mega-news">
+                                            <h3>News Room</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, nulla eleifend fermentum rutrum.</p>
+                                        </div>
+                                        <div class="mega-link">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>Blog</span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                          <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>White Papers
+                                                      </span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                        <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                      </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>Calendar & Upcoming Events</span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                      <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                    </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="inner-pages">
+        <!-- Heading Section -->
+        <section class="heading-section" style="background-image: url(images/about-bg.png)">
+            <h1 class="h1">About Us</h1>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story-section">
+            <div class="container">
+                <div class="story-block">
+                    <h2 class="h2">Our Story</h2>
+                    <h4>NG/E are the next generation of thinkers and innovators, at the forefront of the renewable energy transition in Australia. </h4>
+                    <p class="p">While it’s at our core, we’re more than just an electrical contracting company - we deliver solutions, setting new standards for the way we think about and create energy.</p>
+                    <a href="javascript:;" class="btn-cta">
+                        <span>Download capability statemenent</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12.941" height="12.99" viewBox="0 0 12.941 12.99">
+                        <g id="Group_30" data-name="Group 30" transform="translate(12.941 5.919) rotate(133)">
+                          <path id="Path_9" data-name="Path 9" d="M9.087,3.629a.66.66,0,0,0-.12-.009H2.147L2.3,3.548a1.386,1.386,0,0,0,.391-.29l1.913-2A.775.775,0,0,0,4.7.3.672.672,0,0,0,3.732.14.7.7,0,0,0,3.662.2L.2,3.823a.748.748,0,0,0,0,1.024h0L3.662,8.468a.67.67,0,0,0,.978,0A.717.717,0,0,0,4.7,8.4a.775.775,0,0,0-.1-.959L2.69,5.43a1.389,1.389,0,0,0-.346-.264l-.208-.1H8.929a.727.727,0,0,0,.158-1.439Z" transform="translate(0 0)" fill="#1e3962"/>
+                        </g>
+                      </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="container">
+                <ul class="timeline-block">
+                    <span class="default-line"></span>
+                    <span class="draw-line"></span>
+                    <li class="timeline-unit">
+                        <div class="timeline-text">
+                            <h3>2011 - Two Man Van</h3>
+                            <p class="p">Pete Summers and Nathan Pope started their electrical business in 2011, starting out in our Cremorne warehouse (which we still have to this day).</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <img src="images/van.svg" alt="icon" />
+                        </div>
+                    </li>
+                    <li class="timeline-unit">
+                        <div class="timeline-text">
+                            <h3>2012 - Electrical & Energy Construction</h3>
+                            <p class="p">As the business grew, we started working in the electrical and energy construction space</p>
+                        </div>
+                        <div class="timeline-icon">
+                            <img src="images/electrical.svg" alt="icon" />
+                        </div>
+                    </li>
+                    <li class="timeline-unit">
+                        <div class="timeline-text">
+                            <h3>2015 - VPN and NG/E merger</h3>
+                            <p class="p">Victoria Power Networks (VPN) & Beon Energy Solutions acquired 50% of NG/E. As a result, our projects, team and capabilities increased. </p>
+                        </div>
+                        <div class="timeline-icon">
+                            <img src="images/vpn.svg" alt="icon" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="team-wrapper">
+                    <div class="team-block">
+                        <h2 class="h2">Founders/Directors</h2>
+                        <div class="team-list">
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-block">
+                        <h2 class="h2">Team</h2>
+                        <div class="team-list">
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="team-unit">
+                                <div class="team-overlay">
+                                    <div class="team-links">
+                                        <a href="javascript"><img src="images/linkedin-lg.svg" alt="linkedin"></a>
+                                        <a href="javascript"><img src="images/email-lg.svg" alt="email"></a>
+                                    </div>
+                                </div>
+                                <img src="images/member.png" width="248" height="248" alt="image" />
+                                <div class="team-text">
+                                    <h3>Peter Summers</h3>
+                                    <p class="p">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Subscribe-section -->
+        <section class="subscribe-section">
+            <div class="container">
+                <div class="subscribe-block">
+                    <h2 class="h2">Subscribe to the <br> NG/E newsletter</h2>
+                    <form class="subscribe-form" action="">
+                        <input class="form-input" type="text" placeholder="name" required>
+                        <input class="form-input" type="email" placeholder="email" required>
+                        <button type="submit" class="btn btn-teal btn-md">
+                          <span>subscribe</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="9.668" height="8.679" viewBox="0 0 9.668 8.679">
+                            <g id="arrow" transform="translate(13.997 4.642) rotate(137)">
+                              <g id="Group_22" data-name="Group 22" transform="translate(5.919 0) rotate(43)">
+                                <path id="Path_9" data-name="Path 9" d="M9.087,3.629a.66.66,0,0,0-.12-.009H2.147L2.3,3.548a1.386,1.386,0,0,0,.391-.29l1.913-2A.775.775,0,0,0,4.7.3.672.672,0,0,0,3.732.14.7.7,0,0,0,3.662.2L.2,3.823a.748.748,0,0,0,0,1.024h0L3.662,8.468a.67.67,0,0,0,.978,0A.717.717,0,0,0,4.7,8.4a.775.775,0,0,0-.1-.959L2.69,5.43a1.389,1.389,0,0,0-.346-.264l-.208-.1H8.929a.727.727,0,0,0,.158-1.439Z" transform="translate(0 0)" fill="#1e3962"/>
+                              </g>
+                            </g>
+                          </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <section class="footer-section">
+            <div class="container">
+                <div class="footer-block">
+                    <div class="footer-location">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Melbourne</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Adelaide</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Queensland</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="home.html" class="footer-logo">
+                            <img src="images/logo.svg" width="146" height="51" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="footer-social">
+                        <a class="email" href="mailto:info@ngelectrical.com.au">info@ngelectrical.com.au</a>
+                        <a class="telephone" href="tel:03 9421 1118">03 9421 1118</a>
+                        <ul class="social">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="images/linkedin.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="images/instagram.svg" alt="icon" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Our Company</h4>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">About</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">What We Do</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our Approach</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our accreditations</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-stock">
+                        <div class="neca-member">
+                            <img src="images/neca.png" width="297" height="84" alt="neca" />
+                        </div>
+                        <div class="certified">
+                            <img src="images/certified.png" width="321" height="92" alt="certified" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+    <!-- JQuery JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap.js"></script>
+    <!-- Swiper Slider JS -->
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <!-- GSAP TweenMax -->
+    <script src="js/tweenmax.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

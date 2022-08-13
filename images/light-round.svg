@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120.453" height="120.018" viewBox="0 0 120.453 120.018">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_84" data-name="Rectangle 84" width="120.453" height="120.018" transform="translate(-2 -2)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_106" data-name="Group 106" transform="translate(2 2)">
+    <path id="Path_172" data-name="Path 172" d="M106.281,79.011,88.53,103.43h7.515L80.69,127.752l32.418-25.01h-8.763l18.608-23.731Z" transform="translate(-44.986 -44.05)" fill="#00a4b6"/>
+    <g id="Group_105" data-name="Group 105">
+      <g id="Group_104" data-name="Group 104" clip-path="url(#clip-path)">
+        <path id="Path_173" data-name="Path 173" d="M128.446,1A56.372,56.372,0,0,1,183.03,71.267" transform="translate(-71.61 -0.558)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_174" data-name="Path 174" d="M254.992,126.4a2.851,2.851,0,1,1-2.851-2.851,2.851,2.851,0,0,1,2.851,2.851" transform="translate(-138.981 -68.881)" fill="#0ca3b5"/>
+        <circle id="Ellipse_19" data-name="Ellipse 19" cx="2.851" cy="2.851" r="2.851" transform="translate(110.308 54.67)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_175" data-name="Path 175" d="M57.323,184.61A56.323,56.323,0,0,1,1,128.287" transform="translate(-0.558 -71.521)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_176" data-name="Path 176" d="M1.159,57.323A56.323,56.323,0,0,1,57.482,1" transform="translate(-0.646 -0.558)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_177" data-name="Path 177" d="M251.663,159.54q-.054.214-.111.428" transform="translate(-140.243 -88.945)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_178" data-name="Path 178" d="M191.809,163.381a56.383,56.383,0,0,1-46.788,40.206" transform="translate(-80.851 -91.087)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="1.986 2.98"/>
+        <path id="Path_179" data-name="Path 179" d="M142.987,254.428l-.439.05" transform="translate(-79.472 -141.846)" fill="none" stroke="#0ca3b5" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_180" data-name="Path 180" d="M128.446,250.1l8.565-4.137-1.862,3.72,2.308,3.461Z" transform="translate(-71.61 -137.128)" fill="#0ca3b5"/>
+      </g>
+    </g>
+  </g>
+</svg>

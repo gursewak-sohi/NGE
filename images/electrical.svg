@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="123.94" height="123.788" viewBox="0 0 123.94 123.788">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_96" data-name="Rectangle 96" width="123.94" height="123.788" transform="translate(-2 -2)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_118" data-name="Group 118" transform="translate(2 2)">
+    <g id="Group_117" data-name="Group 117" clip-path="url(#clip-path)">
+      <path id="Path_191" data-name="Path 191" d="M206.464,28.22a59.522,59.522,0,0,1-.539,93.948" transform="translate(-109.713 -15.035)" fill="none" stroke="#04b0c1" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_192" data-name="Path 192" d="M23.722,133.042a59.471,59.471,0,0,1-10-83.508" transform="translate(-0.533 -26.391)" fill="none" stroke="#04b0c1" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_193" data-name="Path 193" d="M28.344,23.722a59.471,59.471,0,0,1,83.508-10" transform="translate(-15.101 -0.533)" fill="none" stroke="#04b0c1" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_194" data-name="Path 194" d="M202.6,231.377l-.38.272" transform="translate(-107.738 -123.273)" fill="none" stroke="#ef5d80" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_195" data-name="Path 195" d="M119.384,230.288a59.5,59.5,0,0,1-70.5-2.946" transform="translate(-26.043 -121.123)" fill="none" stroke="#ef5d80" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="1.978 2.966"/>
+      <path id="Path_196" data-name="Path 196" d="M47.321,226.066l-.36-.3" transform="translate(-25.02 -120.285)" fill="none" stroke="#ef5d80" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_197" data-name="Path 197" d="M109.624,82.06,91.858,106.5H99.38L84.012,130.842l32.445-25.031h-8.77L126.31,82.06Z" transform="translate(-44.76 -43.72)" fill="#002c4f"/>
+    </g>
+  </g>
+</svg>
