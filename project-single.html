@@ -1,27 +1,472 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Studies</title>
+    <link rel="shortcut icon" href="images/favicon.svg" />
+    <!-- Booststrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- all page styles go in here... -->
+<!-- Project Single Style -->
 <style>
-
+    /* Project Heading Section */
+    
+    .project-heading-section {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 120rem 50.188rem;
+        height: 58.063rem;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--bg-gray);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: center;
+        padding-bottom: 3.625rem;
+    }
+    
+    .project-heading-section::after {
+        content: '';
+        position: absolute;
+        bottom: 7.375rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120rem;
+        height: 7rem;
+        background-image: url(images/project-single.svg);
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+    
+    .project-heading-section h1 {
+        position: relative;
+        z-index: 2;
+        padding: 0 12px;
+    }
+    
+    @media (max-width:767px) {
+        .project-heading-section {
+            background-size: 767px auto;
+            height: 393px;
+            padding-bottom: 24px;
+        }
+        .project-heading-section h1 {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    /* Project Body Section */
+    
+    .project-body-section {
+        padding: 9.625rem 0 6.25rem;
+    }
+    
+    .project-body-block {
+        display: grid;
+        grid-template-columns: 23.188rem auto;
+        column-gap: 3.125rem;
+    }
+    
+    .project-sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .facts-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8.5rem 1.875rem 2.563rem;
+        border-radius: 5px;
+        background-color: var(--bg-gray);
+        position: relative;
+        margin-bottom: 3.125rem;
+    }
+    
+    .facts-block img {
+        position: absolute;
+        left: 50%;
+        margin-top: -13.188rem;
+        width: 10.188rem;
+        height: 9.938rem;
+        transform: translateX(-50%);
+        margin-left: 0.5rem;
+    }
+    
+    .facts-block h3 {
+        margin-bottom: 6px;
+    }
+    
+    .facts-block ul li {
+        font-size: max(1.063rem, 16px);
+        line-height: max(2.5rem, 32px);
+    }
+    
+    .project-details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .details-text-unit {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5.313rem;
+        max-width: 67.625rem;
+    }
+    
+    .details-text-unit h2 {
+        margin-bottom: 1.563rem;
+    }
+    
+    .project-details-images {
+        border-top: 1px solid var(--gray);
+        margin-top: 15px;
+        padding-top: 6.25rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3.25rem;
+    }
+    
+    .details-images-unit {
+        width: 100%;
+        height: 46.25rem;
+    }
+    
+    .details-images-unit img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .back-study-block {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 6.25rem;
+        border-top: 1px solid var(--gray);
+        padding-top: 3.125rem;
+    }
+    
+    @media (max-width: 767px) {
+        .project-body-section {
+            padding: 80px 0 50px;
+        }
+        .project-body-block {
+            grid-template-columns: 1fr;
+        }
+        .details-text-unit {
+            margin-bottom: 35px;
+        }
+        .project-details-images {
+            padding-top: 50px;
+        }
+        .project-details-images {
+            grid-template-columns: 1fr;
+        }
+        .details-images-unit {
+            height: 240px;
+        }
+        .details-images-unit:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        .back-study-block {
+            margin-top: 50px;
+            padding-top: 30px;
+        }
+    }
 </style>
 
 <body>
 
+    <!-- Header Sectioin -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="home.html">
+                    <img src="images/logo.svg" width="199" height="70" alt="icon" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerToggler" aria-controls="headerToggler" aria-expanded="false" aria-label="Toggle navigation">
+                  <svg fill="#1E3962" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+                </button>
+                <div class="collapse navbar-collapse" id="headerToggler">
+                    <ul class="navbar-nav ms-auto mb-4 mb-md-5 mt-4 mt-md-4 mt-lg-0 mb-lg-0">
+                        <li>
+                            <a href="about.html">About us</a>
+                        </li>
+                        <li>
+                            <a href="what-we-do.html">What we do 
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14.376">
+                                <path data-name="Path 9" d="M15.045 5.962a1.09 1.09 0 0 0-.2-.014L3.56 6.016l.247-.121a2.333 2.333 0 0 0 .65-.484l3.185-3.336a1.289 1.289 0 0 0 .176-1.59 1.106 1.106 0 0 0-1.6-.249A1.181 1.181 0 0 0 6.1.34L.341 6.371a1.24 1.24 0 0 0-.011 1.7l5.688 5.962a1.108 1.108 0 0 0 1.619-.012 1.209 1.209 0 0 0 .1-.118 1.281 1.281 0 0 0-.156-1.588L4.44 9.009a2.258 2.258 0 0 0-.57-.434l-.342-.16 11.242-.068a1.216 1.216 0 0 0 1.214-1.015 1.178 1.178 0 0 0-.939-1.37Z" fill="#fff"/>
+                              </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="our-approach.html">Our Approach</a>
+                        </li>
+                        <li class="mega-menu">
+                            <a href="#">News Room 
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14.376">
+                                <path data-name="Path 9" d="M15.045 5.962a1.09 1.09 0 0 0-.2-.014L3.56 6.016l.247-.121a2.333 2.333 0 0 0 .65-.484l3.185-3.336a1.289 1.289 0 0 0 .176-1.59 1.106 1.106 0 0 0-1.6-.249A1.181 1.181 0 0 0 6.1.34L.341 6.371a1.24 1.24 0 0 0-.011 1.7l5.688 5.962a1.108 1.108 0 0 0 1.619-.012 1.209 1.209 0 0 0 .1-.118 1.281 1.281 0 0 0-.156-1.588L4.44 9.009a2.258 2.258 0 0 0-.57-.434l-.342-.16 11.242-.068a1.216 1.216 0 0 0 1.214-1.015 1.178 1.178 0 0 0-.939-1.37Z" fill="#fff"/>
+                              </svg>
+                            </a>
+                            <div class="mega-menu-block hide">
+                                <div class="container">
+                                    <div class="mega-menu-content">
+                                        <div class="mega-news">
+                                            <h3>News Room</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, nulla eleifend fermentum rutrum.</p>
+                                        </div>
+                                        <div class="mega-link">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>Blog</span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                          <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>White Papers
+                                                      </span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                        <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                      </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <span>Calendar & Upcoming Events</span>
+                                                        <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="17.823" height="16" viewBox="0 0 17.823 16">
+                                                      <path id="Path_9" data-name="Path 9" d="M16.751,38.532a1.218,1.218,0,0,0-.221-.017H3.957l.274-.133a2.555,2.555,0,0,0,.72-.534l3.526-3.691a1.429,1.429,0,0,0,.185-1.769A1.239,1.239,0,0,0,6.88,32.1a1.292,1.292,0,0,0-.131.115L.374,38.889a1.379,1.379,0,0,0,0,1.888h0L6.75,47.452a1.235,1.235,0,0,0,1.8,0,1.321,1.321,0,0,0,.109-.131,1.429,1.429,0,0,0-.185-1.769l-3.52-3.7a2.56,2.56,0,0,0-.638-.487l-.383-.18H16.461a1.34,1.34,0,0,0,.291-2.653Z" transform="translate(0 -31.842)" fill="#1e3962"/>
+                                                    </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="inner-pages">
+        <!-- Project Heading Section -->
+        <section class="project-heading-section" style="background-image: url(images/project-single-bg.jpg)">
+            <h1 class="h1 mb-0">Central Highlands Water Treatment Plant Solar Farms</h1>
+        </section>
+
+        <!-- Project body Section -->
+        <section class="project-body-section">
+            <div class="container">
+                <div class="project-body-block">
+                    <div class="project-sidebar">
+                        <div class="facts-block">
+                            <img src="images/facts.svg" alt="icon" />
+                            <h3 class="h3">Fast Facts</h3>
+                            <ul>
+                                <li>Yearly energy</li>
+                                <li>Usage</li>
+                                <li>System size</li>
+                                <li>Panels</li>
+                                <li>Inverters</li>
+                                <li>Railing</li>
+                            </ul>
+                        </div>
+                        <div class="share-block">
+                            <h4 class="h4">Share this</h4>
+                            <ul>
+                                <li>
+                                    <a href="javascript:;"><img src="images/linkedin-xs.svg" alt="linkedin"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"><img src="images/twitter-xs.svg" alt="twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"><img src="images/facebook-xs.svg" alt="facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"><img src="images/printing-xs.svg" alt="print"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"><img src="images/email-xs.svg" alt="email"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-details-text">
+                            <div class="details-text-unit">
+                                <h2 class="h2">Scope of works</h2>
+                                <p class="p">Design and construction of a 7MW industrial-scale smart microgrid energy system at Deakin’s Waurn Ponds campus in Geelong.</p>
+                            </div>
+                            <div class="details-text-unit">
+                                <h2 class="h2">Results</h2>
+                                <p class="p">Will be the largest solar system installed at an Australian University - a 14.5-hectare solar energy generation farm.</p>
+                                <p class="p">Reduce carbon emissions by 12,000 tonnes per year and generate half of the University’s energy needs on-site.</p>
+                                <p class="p">The microgrid can be expanded to include research of other technologies such as hydrogen storage that could lead to hydrogen and electric vehicle integration</p>
+                            </div>
+                        </div>
+                        <div class="project-details-images">
+                            <div class="details-images-unit">
+                                <img src="images/details-1.jpg" width="583" height="740" alt="image" />
+                            </div>
+                            <div class="details-images-unit">
+                                <img src="images/details-2.jpg" width="583" height="740" alt="image" />
+                            </div>
+                        </div>
+                        <div class="back-study-block">
+                            <a href="case-studies.html" class="btn-cta">
+                                <span>Back to case studies</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12.941" height="12.99" viewBox="0 0 12.941 12.99">
+                                <g id="Group_30" data-name="Group 30" transform="translate(12.941 5.919) rotate(133)">
+                                  <path id="Path_9" data-name="Path 9" d="M9.087,3.629a.66.66,0,0,0-.12-.009H2.147L2.3,3.548a1.386,1.386,0,0,0,.391-.29l1.913-2A.775.775,0,0,0,4.7.3.672.672,0,0,0,3.732.14.7.7,0,0,0,3.662.2L.2,3.823a.748.748,0,0,0,0,1.024h0L3.662,8.468a.67.67,0,0,0,.978,0A.717.717,0,0,0,4.7,8.4a.775.775,0,0,0-.1-.959L2.69,5.43a1.389,1.389,0,0,0-.346-.264l-.208-.1H8.929a.727.727,0,0,0,.158-1.439Z" transform="translate(0 0)" fill="#1e3962"></path>
+                                </g>
+                              </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Subscribe-section -->
+        <section class="subscribe-section">
+            <div class="container">
+                <div class="subscribe-block">
+                    <h2 class="h2">Subscribe to the <br> NG/E newsletter</h2>
+                    <form class="subscribe-form" action="">
+                        <input class="form-input" type="text" placeholder="name" required>
+                        <input class="form-input" type="email" placeholder="email" required>
+                        <button type="submit" class="btn btn-teal btn-md">
+                          <span>subscribe</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="9.668" height="8.679" viewBox="0 0 9.668 8.679">
+                            <g id="arrow" transform="translate(13.997 4.642) rotate(137)">
+                              <g id="Group_22" data-name="Group 22" transform="translate(5.919 0) rotate(43)">
+                                <path id="Path_9" data-name="Path 9" d="M9.087,3.629a.66.66,0,0,0-.12-.009H2.147L2.3,3.548a1.386,1.386,0,0,0,.391-.29l1.913-2A.775.775,0,0,0,4.7.3.672.672,0,0,0,3.732.14.7.7,0,0,0,3.662.2L.2,3.823a.748.748,0,0,0,0,1.024h0L3.662,8.468a.67.67,0,0,0,.978,0A.717.717,0,0,0,4.7,8.4a.775.775,0,0,0-.1-.959L2.69,5.43a1.389,1.389,0,0,0-.346-.264l-.208-.1H8.929a.727.727,0,0,0,.158-1.439Z" transform="translate(0 0)" fill="#1e3962"/>
+                              </g>
+                            </g>
+                          </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <section class="footer-section">
+            <div class="container">
+                <div class="footer-block">
+                    <div class="footer-location">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Melbourne</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Adelaide</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>Queensland</span>
+                                    <img src="images/arrow-lg.svg" alt="icon" />
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="home.html" class="footer-logo">
+                            <img src="images/logo.svg" width="146" height="51" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="footer-social">
+                        <a class="email" href="mailto:info@ngelectrical.com.au">info@ngelectrical.com.au</a>
+                        <a class="telephone" href="tel:03 9421 1118">03 9421 1118</a>
+                        <ul class="social">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="images/linkedin.svg" alt="icon" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="images/instagram.svg" alt="icon" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Our Company</h4>
+                        <ul>
+                            <li>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="what-we-do.html">What We Do</a>
+                            </li>
+                            <li>
+                                <a href="our-approach.html">Our Approach</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Our accreditations</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-stock">
+                        <div class="neca-member">
+                            <img src="images/neca.png" width="297" height="84" alt="neca" />
+                        </div>
+                        <div class="certified">
+                            <img src="images/certified.png" width="321" height="92" alt="certified" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
 
 
-
-
-
-<!-- all scripts go in here... -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="bootstrap/boostrap.js"></script>
+    <!-- JQuery JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap.js"></script>
+    <!-- Swiper Slider JS -->
+    <script src="swiper/swiper-bundle.min.js"></script>
+    <!-- GSAP TweenMax -->
+    <script src="js/tweenmax.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>

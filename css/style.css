@@ -398,6 +398,7 @@ main.inner-pages {
 .header-active .header {
     background-color: var(--white);
     height: 7.5rem;
+    box-shadow: 2px 2px 6px rgba(30, 57, 98, .07);
 }
 
 .navbar {
@@ -527,6 +528,7 @@ main.inner-pages {
     transition: 0.3s all ease;
     transform: scaleY(0);
     transform-origin: top;
+    box-shadow: 2px 2px 6px rgba(30, 57, 98, .07);
 }
 
 .mega-menu:hover .mega-menu-block {
@@ -675,6 +677,7 @@ main.inner-pages {
         transform: scaleY(1);
         display: none;
         z-index: 2;
+        box-shadow: none;
     }
     .mega-menu-block:not(.hide) {
         display: block;
@@ -1113,4 +1116,39 @@ main.inner-pages {
     .story-block {
         padding-bottom: 50px;
     }
+}
+
+
+/* Share Block */
+
+.share-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.125rem;
+}
+
+.share-block h4 {
+    margin-bottom: 1.563rem;
+}
+
+.share-block ul {
+    display: flex;
+    align-items: center;
+}
+
+.share-block ul li {
+    margin-right: 0.938rem;
+}
+
+.share-block ul li:nth-child(2) {
+    position: relative;
+    top: 1px;
+}
+
+.share-block ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
 }
