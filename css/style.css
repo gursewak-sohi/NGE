@@ -106,7 +106,7 @@ img {
 .h2 {
     font-weight: bold;
     font-size: 1.75rem;
-    font-size: max(1.75rem, 22px);
+    font-size: max(1.75rem, 20px);
     /* font-size: 28px; */
     line-height: 2rem;
     /* line-height: 32px; */
@@ -421,6 +421,10 @@ main.inner-pages {
 
 .navbar-nav>li.active>a {
     color: var(--teal);
+}
+
+.navbar-nav>li.active>a svg path {
+    fill: var(--teal);
 }
 
 .navbar-nav>li.mega-menu:hover>a {
@@ -1036,6 +1040,8 @@ main.inner-pages {
     text-align: center;
     padding-bottom: 6.25rem;
     border-bottom: 1px solid var(--gray);
+    max-width: 85rem;
+    margin: 0 auto;
 }
 
 .story-block h2 {
@@ -1043,8 +1049,8 @@ main.inner-pages {
 }
 
 .story-block h4 {
-    font-size: max(0.125rem, 20px);
-    line-height: max(2rem, 28px);
+    font-size: max(0.125rem, 18px);
+    line-height: max(2rem, 26px);
     max-width: 610px;
     margin: 0 0 13px 0;
     color: var(--teal);
@@ -1052,7 +1058,7 @@ main.inner-pages {
 
 .story-block p {
     max-width: 804px;
-    margin: 0 0 18px 0;
+    margin: 0 0 24px 0;
 }
 
 @media (max-width: 767px) {
