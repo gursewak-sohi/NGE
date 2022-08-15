@@ -55,6 +55,8 @@ if (caseSwiperID) {
     });
 }
 
+
+
 // News Room Slider
 var newsSwiperID = document.getElementById('caseSwiper');
 if (newsSwiperID) {
@@ -157,15 +159,12 @@ if (boxes) {
 }
 
 // Timeline Scroll Section
-// --------------------------------------------------------------
 var items = $(".timeline-block li"),
     timelineHeight = $(".timeline-block").height(),
     greyLine = $('.default-line'),
     lineToDraw = $('.draw-line');
-// run this function only if draw line exists on the page
 if (lineToDraw.length) {
     $(window).on('scroll', function() {
-        // Need to constantly get '.draw-line' height to compare against '.default-line'
         var redLineHeight = lineToDraw.height(),
             greyLineHeight = greyLine.height(),
             windowDistance = $(window).scrollTop(),
@@ -174,15 +173,12 @@ if (lineToDraw.length) {
 
         if (windowDistance >= timelineDistance - windowHeight) {
             line = windowDistance - timelineDistance + windowHeight;
-
             if (line <= greyLineHeight) {
                 lineToDraw.css({
                     'height': line + 20 + 'px'
                 });
             }
         }
-
-        // This takes care of adding the class in-view to the li:before items
         var bottom = lineToDraw.offset().top + lineToDraw.outerHeight(true);
         items.each(function(index) {
             var circlePosition = $(this).offset();
@@ -193,5 +189,18 @@ if (lineToDraw.length) {
                 $(this).removeClass('in-view');
             }
         });
+    });
+}
+
+// Projects Slider
+var projectSwiperID = document.getElementById('projectSwiper');
+if (projectSwiperID) {
+    const projectSwiper = new Swiper('#projectSwiper .swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '#projectSwiper .swiper-button-next',
+            prevEl: '#projectSwiper .swiper-button-prev',
+        },
     });
 }
