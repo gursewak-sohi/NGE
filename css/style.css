@@ -1124,7 +1124,7 @@ main.inner-pages {
 .share-block {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.125rem;
+    margin-bottom: 50px;
 }
 
 .share-block h4 {
@@ -1136,7 +1136,7 @@ main.inner-pages {
     align-items: center;
 }
 
-.share-block ul li {
+.share-block ul li:not(:last-child) {
     margin-right: 0.938rem;
 }
 
@@ -1151,4 +1151,11 @@ main.inner-pages {
     align-items: center;
     width: 16px;
     height: 16px;
+}
+
+@media (max-width:767px) {
+    .share-block {
+        align-items: center;
+        text-align: center;
+    }
 }
