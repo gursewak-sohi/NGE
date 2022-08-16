@@ -1159,3 +1159,45 @@ main.inner-pages {
         text-align: center;
     }
 }
+
+
+/* Forms */
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-block h4 {
+    margin-bottom: 7px;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+}
+
+.input-field input {
+    background-color: rgba(30, 57, 98, .07);
+    height: max(3.438rem, 42px);
+    border-radius: 7px;
+    padding: 0 max(0.938rem, 12px);
+    font-size: 16px;
+    border: none;
+    width: 100%;
+}
+
+.input-field select {
+    background-color: rgba(30, 57, 98, .07);
+    height: max(3.438rem, 42px);
+    border-radius: 7px;
+    padding: 0 2.813rem 0 max(0.938rem, 12px);
+    font-size: 16px;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../images/dropdown.svg);
+    background-position: right max(0.938rem, 12px) center;
+    background-repeat: no-repeat;
+    width: 100%;
+}

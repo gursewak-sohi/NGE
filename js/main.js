@@ -204,3 +204,16 @@ if (projectSwiperID) {
         },
     });
 }
+
+// Feautred Slider
+var featureSwiperID = document.getElementById('featureSwiper');
+if (featureSwiperID) {
+    const featureSwiper = new Swiper('#featureSwiper .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '#featureSwiper .swiper-button-next',
+            prevEl: '#featureSwiper .swiper-button-prev',
+        },
+    });
+}
