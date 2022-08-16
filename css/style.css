@@ -99,7 +99,7 @@ img {
     font-weight: bold;
     font-size: 2.25rem;
     /* font-size: 36px; */
-    line-height: 2.625rem;
+    line-height: max(2.625rem, 28px);
     /* line-height: 42px; */
 }
 
@@ -1045,7 +1045,7 @@ main.inner-pages {
 
 @media (max-width: 1199px) {
     .heading-section {
-        padding-bottom: 22px;
+        padding-bottom: 20px;
     }
     .heading-section.heading-sm-section {
         padding-bottom: 35px;
@@ -1069,8 +1069,13 @@ main.inner-pages {
         height: 24.613rem;
     }
     .heading-section.heading-sm-section {
-        padding-bottom: 18px;
+        padding-bottom: 6px;
         height: 15.313rem;
+    }
+    .heading-section.heading-sm-section h1 {
+        height: 50px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -1195,6 +1200,7 @@ main.inner-pages {
     font-size: 16px;
     border: none;
     -webkit-appearance: none;
+    color: var(--navy);
     appearance: none;
     background-image: url(../images/dropdown.svg);
     background-position: right max(0.938rem, 12px) center;
